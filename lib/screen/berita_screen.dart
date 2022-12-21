@@ -37,35 +37,38 @@ class _BeritaScreenState extends State<BeritaScreen> {
                 horizontal: 10,
                 vertical: 10,
               ),
+              shrinkWrap: true,
               itemCount: beritaCubit.beritaModel.data?.posts?.length ?? 0,
               itemBuilder: (context, index) {
                 return Card(
+                  color: Color.fromARGB(255, 214, 243, 250),
+                  borderOnForeground: true,
                   child: ListTile(
                     contentPadding: EdgeInsets.symmetric(
-                      vertical: 18,
-                      horizontal: 18,
+                      vertical: 10,
+                      horizontal: 20,
                     ),
                     title: Row(
                       children: [
-                        Container(
-                          width: 90,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                        SizedBox(
+                          width: 120,
                           child: Image.network(beritaCubit
                               .beritaModel.data!.posts![index].thumbnail!),
                         ),
                         SizedBox(
-                          width: 210,
+                          width: 10,
+                        ),
+                        SizedBox(
+                          width: 190,
                           child: Padding(
-                            padding: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(12),
                             child: Column(
                               children: [
                                 Text(
                                   beritaCubit
                                       .beritaModel.data!.posts![index].title!,
                                   overflow: TextOverflow.ellipsis,
-                                  maxLines: 3,
+                                  maxLines: 2,
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -87,7 +90,7 @@ class _BeritaScreenState extends State<BeritaScreen> {
                                   beritaCubit.beritaModel.data!.posts![index]
                                       .description!,
                                   overflow: TextOverflow.ellipsis,
-                                  maxLines: 3,
+                                  maxLines: 2,
                                 )
                               ],
                             ),
