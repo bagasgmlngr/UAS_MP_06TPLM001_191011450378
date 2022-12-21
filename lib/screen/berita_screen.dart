@@ -22,7 +22,11 @@ class _BeritaScreenState extends State<BeritaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('191011450378 | Bagas Gemilang Ryadi'),
+        title: Text(
+          '191011450378 | Bagas Gemilang Ryadi',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
       ),
       body: BlocBuilder<BeritaCubit, BeritaState>(
           bloc: beritaCubit,
@@ -41,8 +45,14 @@ class _BeritaScreenState extends State<BeritaScreen> {
               itemCount: beritaCubit.beritaModel.data?.posts?.length ?? 0,
               itemBuilder: (context, index) {
                 return Card(
-                  color: Color.fromARGB(255, 214, 243, 250),
-                  borderOnForeground: true,
+                  color: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      color: Colors.grey,
+                      width: 3,
+                    ),
+                    borderRadius: BorderRadius.circular(26),
+                  ),
                   child: ListTile(
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
@@ -70,6 +80,7 @@ class _BeritaScreenState extends State<BeritaScreen> {
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 2,
                                   style: TextStyle(
+                                    color: Colors.white,
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -84,6 +95,9 @@ class _BeritaScreenState extends State<BeritaScreen> {
                                         .pubDate!,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                                 Text(
@@ -91,6 +105,9 @@ class _BeritaScreenState extends State<BeritaScreen> {
                                       .description!,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 2,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 )
                               ],
                             ),
